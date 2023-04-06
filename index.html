@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fadhils' Restaurant</title>
+  <link rel="stylesheet" type="text/css" href="home.css">
+  
+  <style>
+    .slider {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 500px;
+    }
+
+    .slider img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .advertisements {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 30%;
+    }
+
+    .ad {
+      flex: 1;
+      margin: 0 10px;
+    }
+
+    .ad img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <header>
+  <div class="logo">
+    <a href="index.html">
+      <img src="restaurantlogo.png" alt="Restaurant Logo">
+    </a>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+</header>
+
+  <main>
+    <section class="slider">
+      <img src="grill.png" alt="Bar and Grill">
+      <img src="image3.jpg" alt="Knife burger">
+      <img src="image2.jpg" alt="Vegetable salad">
+      <img src="grill.png" alt="Grill">
+      <img src="image2.jpg" alt="Vegetable salad">
+      <img src="image3.jpg" alt="Knife burger">
+      <section class="advertisements">
+        <div class="ad">
+          <img src="burger.png" alt="Advertisement 1">
+        </div>
+        <div class="ad">
+          <img src="skeeters.avif" alt="Advertisement 2">
+        </div>
+        <div class="ad">
+          <img src="food.jpg" alt="Advertisement 3">
+        </div>
+      </section>
+    </section>
+  </main>
+  <script>
+  let adIndex = 0;
+  const ads = document.querySelectorAll('.ad');
+  
+  function showAd() {
+    ads.forEach(ad => {
+      ad.style.display = 'none';
+    });
+    adIndex++;
+    if (adIndex > ads.length) {
+      adIndex = 1;
+    }
+    ads[adIndex - 1].style.display = 'block';
+    setTimeout(showAd, 5000); 
+  }
+  
+  showAd();
+</script>
+
+  <section class="content">
+    <h1><u>Fadhils' Restaurant</u></h1>
+    
+
+    <p>Welcome to Fadhils' Restaurant, where delicious food and great service are always on the menu! We are a family-owned restaurant that prides ourselves on providing our customers with a warm and welcoming atmosphere, as well as a wide variety of tasty dishes to choose from.</p>
+<p>Our menu is inspired by a fusion of traditional and modern cuisine, featuring everything from classic comfort foods to fresh and innovative dishes. Our expert chefs use only the freshest ingredients to create mouth-watering flavors that are sure to please.</p>
+
+<p>Whether you're stopping by for a quick lunch or celebrating a special occasion with family and friends, our friendly and attentive staff will ensure that your dining experience is nothing short of exceptional. And with a fully-stocked bar and an extensive wine list, we have the perfect beverage to complement any meal.</p>
+
+<p>At Fadhils' Restaurant, we believe that dining out should be an experience to remember. That's why we go above and beyond to create a dining experience that is second to none. From our cozy and inviting atmosphere to our delicious and satisfying dishes, we guarantee that you'll leave our restaurant feeling satisfied and eager to come back for more.</p>
+<p>So come on in and join us for a meal - we can't wait to show you what makes Fadhils' Restaurant one of the best dining experiences in town!</p>
+    <a href="services.html" class="cta">Learn More</a>
+  
+  <footer>
+    <p>&copy; 2023 Fadhils' Restaurant. All Rights Reserved.</p>
+  </footer>
+  <script>
+  let slideIndex = 0;
+  showSlides();
+
+  function showSlides() {
+    let slides = document.getElementsByClassName("slider")[0].getElementsByTagName("img");
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {
+      slideIndex = 1;
+    }
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 3000); 
+  }
+</script>
+
+  
+</body>
+</html>

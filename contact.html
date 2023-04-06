@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact Us</title>
+  <link rel="stylesheet" type="text/css" href="contact.css">
+  <script>
+    function validateForm() {
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var message = document.getElementById("message").value;
+
+      
+      if (name == "" || email == "" || message == "") {
+        alert("Please fill in all required fields.");
+        return false;
+      }
+      var emailRegex = /^\S+@\S+\.\S+$/;
+      if (!emailRegex.test(email)) {
+        alert("Please enter a valid email address.");
+        return false;
+      }
+
+  
+      return true;
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h1>Contact Us</h1>
+      <p>For any inquiries or feedback, please fill out the form below:</p>
+      <form onsubmit="return validateForm()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">Send</button>
+      </form>
+
+      <p>You can also reach us at:</p>
+      <ul>
+        <li>Phone: 0792852527</li>
+        <li>Email: bfadhil@kabarak.ac.ke</li>
+        <li>Address: Nakuru, Kabarak Main</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Fadhils' Restaurant. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
